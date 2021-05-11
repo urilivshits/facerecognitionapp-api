@@ -71,15 +71,15 @@ app.post("/imageurl", (req, res) => {image.handleApiCall(req, res)});
 //?leaderboard - accessing leaderboard
 app.get("/leaderboard", (req, res) => {leaderboard.getLeaderboard(req, res, db)});
 
-//listening to changes
-app.listen(3000, () => {
-    console.log("app is running on port 3000");
-});
-
-// //listening to changes on heroku
-// app.listen(process.env.PORT || 3000, () => {
-//     console.log(`app is running`);
+// //listening to changes
+// app.listen(3000, () => {
+//     console.log("app is running on port 3000");
 // });
+
+//listening to changes on heroku
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app is running`);
+});
 
 //!------------------------------------ 283. /register and /signin
 // //?register - creating /register req and res
