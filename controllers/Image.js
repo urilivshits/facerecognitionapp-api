@@ -1,7 +1,11 @@
 const Clarifai = require("clarifai"); //these imports Clarifai api
 
+//?importing api keys from a file that are going to be ignored
+// import {myApi} from "..myApi.js"; // - wont work outside of module (eg react)
+const myApi = require("..myApi.js"); // - this will work in node
+
 const app = new Clarifai.App({
-    apiKey: "89126de9e3404d2d893506395d8ea25f"
+    apiKey: myApi.myApi.key
 });
 
 //creating endpoint for Clarifai api on the server, creating endpoint for picture link to be sent from frontend to backend 

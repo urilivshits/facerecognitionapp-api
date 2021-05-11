@@ -1,9 +1,6 @@
 //Please note: the code below contains commented out notes and samples that I left here explicitely for the learning purposes, so that I could use it as reference later on. Thank you for checking it out! 
 
 //!------------------------------------ 282. Setting up our server for facerecognitionapp
-//?importing api keys from a file that is going to be ignored
-import {myApi} from "./myApi.js";
-
 //?import express.js - install express.js and nodemon, twick the json
 const express = require("express");
 
@@ -21,12 +18,16 @@ const cors = require("cors");
 const knex = require("knex");
 const { response } = require("express");
 
+//?importing api keys from a file that are going to be ignored
+// import {myApi} from "./myApi.js"; // - wont work outside of module (eg react)
+const myApi = require("./myApi.js"); // - this will work in node
+
 const db = knex({
     client: 'pg',
     connection: {
       host : '127.0.0.1',
       user : 'postgres',
-      password : myApi.key3,
+      password : myApi.myApi.key3,
       database : 'facerecognition'
     }
 });
@@ -72,8 +73,8 @@ app.get("/leaderboard", (req, res) => {leaderboard.getLeaderboard(req, res, db)}
 // });
 
 //listening to changes on heroku
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`app is running on port ${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log(`app is running`);
 });
 
 //!------------------------------------ 283. /register and /signin
