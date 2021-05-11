@@ -73,7 +73,7 @@ app.get("/leaderboard", (req, res) => {leaderboard.getLeaderboard(req, res, db)}
 // });
 
 //listening to changes on heroku
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`app is running`);
 });
 
