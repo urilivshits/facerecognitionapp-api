@@ -20,7 +20,7 @@ const { response } = require("express");
 
 //?importing api keys from a file that are going to be ignored
 // import {myApi} from "./myApi.js"; // - wont work outside of module (eg react)
-const myApi = require("./myApi.js"); // - this will work in node
+const myApi = require("./myApi"); // - this will work in node
 
 const db = knex({
     client: 'pg',
