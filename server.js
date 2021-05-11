@@ -73,8 +73,8 @@ app.get("/leaderboard", (req, res) => {leaderboard.getLeaderboard(req, res, db)}
 
 //listening to changes on heroku
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`app is running on port ${process.env.PORT}`)
-})
+    console.log(`app is running on port ${process.env.PORT}`);
+});
 
 //!------------------------------------ 283. /register and /signin
 // //?register - creating /register req and res
