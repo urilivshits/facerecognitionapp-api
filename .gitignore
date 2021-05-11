@@ -12,7 +12,7 @@
 /build
 
 # my api
-myApi.js
+/myApi.js
 
 # misc
 .DS_Store
