@@ -41,6 +41,10 @@ app.use(express.json());
 //?this is enabling the cors
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("it's working!");
+});
+
 //!------------------------------------ importing as modules
 //?importing register, signin, profile components from modules
 const register = require("./controllers/Register");
