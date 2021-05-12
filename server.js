@@ -22,14 +22,25 @@ const { response } = require("express");
 // import {myApi} from "./myApi.js"; // - wont work outside of module (eg react)
 const myApi = require("./myApi"); // - this will work in node
 
+// //?connect to db with knex when db is on local machine 
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//       host : '127.0.0.1',
+//       user : 'postgres',
+//       password : myApi.myApi.key3,
+//       database : 'facerecognition'
+//     }
+// });
+
+//?connect to db with knex when db is on heroku 
 const db = knex({
     client: 'pg',
     connection: {
-    //   host : '127.0.0.1',
-      host : 'postgresql-objective-84984',
-      user : 'postgres',
-      password : myApi.myApi.key3,
-      database : 'facerecognition'
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
 });
 
