@@ -25,7 +25,8 @@ const myApi = require("./myApi"); // - this will work in node
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
+    //   host : '127.0.0.1',
+      host : 'postgresql-objective-84984',
       user : 'postgres',
       password : myApi.myApi.key3,
       database : 'facerecognition'
