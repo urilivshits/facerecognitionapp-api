@@ -20,7 +20,7 @@ const { response } = require("express");
 
 //?importing api keys from a file that are going to be ignored
 // import {myApi} from "./myApi.js"; // - wont work outside of module (eg react)
-const myApi = require("./myApi"); // - this will work in node
+const myApi = require("./myApi"); // - this will work in node but will not work on heroku in case it's left in .gitignore (heroku doesn't like .gitignore)
 
 // //?connect to db with knex when db is on local machine 
 // const db = knex({
