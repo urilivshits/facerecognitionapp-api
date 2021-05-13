@@ -34,15 +34,13 @@ const myApi = require("./myApi"); // - this will work in node
 // });
 
 //?connect to db with knex when db is on heroku 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 const db = knex({
     client: 'pg',
     connection: {
         connectionString: process.env.DATABASE_URL,
-        ssl: true
-        // ssl: {
-        //   rejectUnauthorized: false
-        // }
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
 });
 
