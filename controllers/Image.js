@@ -45,7 +45,7 @@ const getEntries = (req, res, db) => {
     .where("id", "=", id)
     .increment("entries", picsSubmitted)
     .update("lastactive", new Date())
-    .returning("entries")
+    .returning(["entries", "lastactive"])
     .then(entries => {
         res.json(entries)
     })
